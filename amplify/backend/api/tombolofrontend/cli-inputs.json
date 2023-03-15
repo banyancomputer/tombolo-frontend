@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "tombolofrontend",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authtombolofrontenda7adb791"
+    },
+    "additionalAuthTypes": [],
+    "conflictResolution": {}
+  }
+}

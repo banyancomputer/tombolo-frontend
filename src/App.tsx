@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useRecoilValue } from "recoil";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 import init from "./lib/init";
-import { sessionStore, themeStore } from "./stores";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { sessionStore } from "./stores";
 import SidebarNav from "./components/nav/SidebarNav";
 import FullScreenLoader from "./components/common/FullScreenLoader";
 import Notifications from "./components/notifications/Notifications";
@@ -22,34 +21,29 @@ import Settings from "./routes/SettingsRoute";
 import NotFound from "./routes/NotFoundRoute";
 
 const AppRenderer = () => {
-  const session = useRecoilValue(sessionStore);
-
-  if (session.loading) {
-    return <FullScreenLoader />;
-  }
+  // const session = useRecoilValue(sessionStore);
+  //
+  // if (session.loading) {
+  //   return <FullScreenLoader />;
+  // }
 
   return (
-    <>
-      <SidebarNav>
-        {/* <Header /> */}
-        <div className="">
-          <Routes>
-            <Route path="/backup" element={<Backup />} />
-            <Route path="/connect" element={<Connect />} />
-            <Route path="/dealportal" element={<DealPortalRoute />} />
-            <Route path="/delegate-account" element={<DelegateAccount />} />
-            <Route path="/link-device" element={<LinkDevice />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/recover" element={<Recover />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </SidebarNav>
-      {/* <Footer /> */}
-    </>
+      <>
+        <SidebarNav>
+          {/* <Header /> */}
+          <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/dealportal" element={<DealPortalRoute />} />
+                <Route path="/register" element={<Register />} />
+                {/*TODO: Implement settings page*/}
+                {/*<Route path="/settings" element={<Settings />} />*/}
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </SidebarNav>
+        {/* <Footer /> */}
+      </>
   );
 };
 
@@ -57,21 +51,21 @@ const App = () => {
   // const theme = useRecoilValue(themeStore);
 
   const useMountEffect = () =>
-    useEffect(() => {
-      init();
-    }, []);
+      useEffect(() => {
+        init();
+      }, []);
 
   useMountEffect();
 
   return (
-    <div className="App min-h-screen bg-[#F7F7F7]">
-      {/* <div data-theme={theme.selectedTheme} className="App min-h-screen"> */}
-      <Router>
-        <Notifications />
-        <AppRenderer />
-      </Router>
-    </div>
+      <div className="App min-h-screen bg-[#F7F7F7]">
+        {/* <div data-theme={theme.selectedTheme} className="App min-h-screen"> */}
+        <Router>
+          <Notifications />
+          <AppRenderer />
+        </Router>
+      </div>
   );
 };
 
-export default App;
+export default withAuthenticator(App);

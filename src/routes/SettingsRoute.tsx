@@ -18,15 +18,15 @@ import {
 } from "@chakra-ui/react";
 
 const SettingsRoute = () => {
-  const session = useRecoilValue(sessionStore);
-
-  if (!session.session && !session.loading) {
-    return <Navigate to="/" />;
-  }
-
-  if (session.loading) {
-    return <FullScreenLoader />;
-  }
+  // const session = useRecoilValue(sessionStore);
+  //
+  // if (!session.session && !session.loading) {
+  //   return <Navigate to="/" />;
+  // }
+  //
+  // if (session.loading) {
+  //   return <FullScreenLoader />;
+  // }
 
   return (
     <div className="">

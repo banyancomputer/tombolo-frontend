@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "tombolofrontend",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtombolofrontenda7adb791",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2023-03-15T19:25:19.562Z"
+}

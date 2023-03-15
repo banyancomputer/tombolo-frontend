@@ -3,15 +3,10 @@ import { useRecoilValue } from "recoil";
 import { sessionStore } from "../stores";
 import Authed from "../components/home/Authed";
 import Public from "../components/home/Public";
+import { useAuthedUser } from "../lib/auth/amplify-auth";
 
 const HomeRoute = () => {
-  const session = useRecoilValue(sessionStore);
-
-  if (session.session) {
-    return <Authed />;
-  }
-
-  return <Public />;
+  return <Authed />;
 };
 
 export default HomeRoute;
