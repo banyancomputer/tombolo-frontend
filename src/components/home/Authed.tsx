@@ -236,33 +236,29 @@ const Authed = () => {
       {deals.length > 0 ? (
         <>
           <div className="xs:hidden md:block">
-            <div className="relative flex h-36">
-              <div className="w-full border-r-2 border-r-[#000] p-4">
-                Data Stored
-                <div className="absolute bottom-0 text-black font-medium text-xl mb-2 ">
-                  123,000TiB
-                </div>
-              </div>
-              <div className="w-full border-r-2 border-r-[#000] p-4">
-                Storage Providers
-                <div className="absolute bottom-0 font-medium text-xl mb-2">
-                  2
-                </div>
-              </div>
-              <div className="w-full p-4">
-                Money Saved
-                <div className="text-slate-500 text-xs">
-                  Compared to AWS Glacier
-                </div>
-                <div className="absolute bottom-0 font-medium text-xl mb-2">
-                  $0
-                </div>
-              </div>
-            </div>
-
             {showFileView ? (
               // File View
               <>
+                <div className="relative flex h-36">
+                  <div className="w-full border-r-2 border-r-[#000] p-4">
+                    Total Deal Size
+                    <div className="absolute bottom-0 text-black font-medium text-xl mb-2 ">
+                      123,000TiB
+                    </div>
+                  </div>
+                  <div className="w-full border-r-2 border-r-[#000] p-4">
+                    Number of Files
+                    <div className="absolute bottom-0 font-medium text-xl mb-2">
+                      2
+                    </div>
+                  </div>
+                  <div className="w-full p-4">
+                    Storage Providers
+                    <div className="absolute bottom-0 font-medium text-xl mb-2">
+                      $0
+                    </div>
+                  </div>
+                </div>
                 <div className="border-t-2 border-t-[#000] pb-44">
                   <div className="flex mt-4">
                     <Button
@@ -312,6 +308,29 @@ const Authed = () => {
             ) : (
               // Overview of Files
               <>
+                <div className="relative flex h-36">
+                  <div className="w-full border-r-2 border-r-[#000] p-4">
+                    Data Stored
+                    <div className="absolute bottom-0 text-black font-medium text-xl mb-2 ">
+                      123,000TiB
+                    </div>
+                  </div>
+                  <div className="w-full border-r-2 border-r-[#000] p-4">
+                    Storage Providers
+                    <div className="absolute bottom-0 font-medium text-xl mb-2">
+                      2
+                    </div>
+                  </div>
+                  <div className="w-full p-4">
+                    Money Saved
+                    <div className="text-slate-500 text-xs">
+                      Compared to AWS Glacier
+                    </div>
+                    <div className="absolute bottom-0 font-medium text-xl mb-2">
+                      $0
+                    </div>
+                  </div>
+                </div>
                 <div className="border-t-2 border-t-[#000] pb-44">
                   <div className="flex mt-4">
                     <Button
@@ -319,7 +338,7 @@ const Authed = () => {
                       colorScheme="blue"
                       variant="solid"
                       ml={4}
-                      w={60}
+                      w={40}
                       onClick={() =>
                         (window.location.href =
                           "https://share.hsforms.com/1mvZF3awnRJC6ywL2aC8-tQe3p87")
