@@ -103,8 +103,8 @@ const Authed = () => {
         const status = row.status.toLowerCase();
         if (status == "terminated") {
           return <Badge colorScheme="red">Terminated</Badge>;
-        } else if (row.status == "in progress") {
-          return <Badge colorScheme="green">In Progress</Badge>;
+        } else if (row.status == "stored") {
+          return <Badge colorScheme="green">Stored</Badge>;
         } else if (row.status == "upload scheduled") {
           return <Badge colorScheme="blue">Upload Scheduled</Badge>;
         } else if (row.status == "data prep") {
@@ -253,7 +253,7 @@ const Authed = () => {
                     </div>
                   </div>
                   <div className="w-full p-4">
-                    Storage Providers
+                    Unique Storage Providers
                     <div className="absolute bottom-0 font-medium text-xl mb-2">
                       $0
                     </div>
@@ -316,7 +316,7 @@ const Authed = () => {
                     </div>
                   </div>
                   <div className="w-full border-r-2 border-r-[#000] p-4">
-                    Storage Providers
+                    Unique Storage Providers
                     <div className="absolute bottom-0 font-medium text-xl mb-2">
                       2
                     </div>
