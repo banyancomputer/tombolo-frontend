@@ -28,22 +28,22 @@ const AppRenderer = () => {
   // }
 
   return (
-      <>
-        <SidebarNav>
-          {/* <Header /> */}
-          <div>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/dealportal" element={<DealPortalRoute />} />
-                <Route path="/register" element={<Register />} />
-                {/*TODO: Implement settings page*/}
-                {/*<Route path="/settings" element={<Settings />} />*/}
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </SidebarNav>
-        {/* <Footer /> */}
-      </>
+    <>
+      <SidebarNav>
+        {/* <Header /> */}
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dealportal" element={<DealPortalRoute />} />
+            <Route path="/register" element={<Register />} />
+            {/*TODO: Implement settings page*/}
+            <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </SidebarNav>
+      {/* <Footer /> */}
+    </>
   );
 };
 
@@ -51,20 +51,20 @@ const App = () => {
   // const theme = useRecoilValue(themeStore);
 
   const useMountEffect = () =>
-      useEffect(() => {
-        init();
-      }, []);
+    useEffect(() => {
+      init();
+    }, []);
 
   useMountEffect();
 
   return (
-      <div className="App min-h-screen bg-[#F7F7F7]">
-        {/* <div data-theme={theme.selectedTheme} className="App min-h-screen"> */}
-        <Router>
-          <Notifications />
-          <AppRenderer />
-        </Router>
-      </div>
+    <div className="App min-h-screen bg-[#F7F7F7]">
+      {/* <div data-theme={theme.selectedTheme} className="App min-h-screen"> */}
+      <Router>
+        <Notifications />
+        <AppRenderer />
+      </Router>
+    </div>
   );
 };
 

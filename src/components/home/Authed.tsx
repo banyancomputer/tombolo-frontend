@@ -199,7 +199,7 @@ const Authed = () => {
   const ExpandedComponentOverView = () => (
     <div className="flex flex-row text-white">
       <button className="w-full bg-[#16181B]" onClick={handleFileViewClick}>
-        Data Retrieval Request
+        Open File View
       </button>
       <button
         className="w-full bg-[#CB3535] "
