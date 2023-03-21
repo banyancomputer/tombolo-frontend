@@ -33,7 +33,7 @@ const navItemsUpper = [
   },
   {
     label: "Support",
-    href: "",
+    href: "https://discord.gg/PVeg4PAqqC",
     icon: Support,
   },
 ];
