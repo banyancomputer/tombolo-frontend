@@ -14,7 +14,7 @@ import Account from "../icons/Account";
 import Support from "../icons/Support";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { Button } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
+import { AddIcon, ArrowLeftIcon } from "@chakra-ui/icons";
 const navItemsUpper = [
   {
     label: "Dashboard",
@@ -37,19 +37,7 @@ const navItemsUpper = [
     icon: Support,
   },
 ];
-const navItemsLower = [
-  {
-    label: "Log Out",
-    callback: async () => {
-      const session = getRecoil(sessionStore);
-      await session.session.destroy();
-      // Force a hard refresh to ensure everything is disconnected properly
-      window.location.href = window.location.origin;
-    },
-    icon: Disconnect,
-    placement: "bottom",
-  },
-];
+
 const SidebarNav = ({ children }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -60,7 +48,6 @@ const SidebarNav = ({ children }: any) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-  // Only render the nav if the user is authed and not in the connection flow
   return (
     <div className="drawer drawer-mobile h-screen">
       <input
@@ -106,11 +93,11 @@ const SidebarNav = ({ children }: any) => {
             ))}
           </ul>
           {/* Lower Menu */}
-          <ul className="mt-auto pb-8">
+          <ul className="mt-auto">
             <Authenticator loginMechanisms={["email"]}>
               {({ signOut }) => (
                 <Button onClick={signOut} colorScheme="black" variant="ghost">
-                  <AddIcon /> Log Out
+                  Log Out
                   {/* placeholder */}
                 </Button>
               )}
